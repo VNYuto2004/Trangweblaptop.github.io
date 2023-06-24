@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/login.js">
+    <link rel="stylesheet" href="icon/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa hàng máy tính</title>
+</head>
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div id="container">
+        <div id="container_login">
+            <div id="wrapper">
+                <form action="" id="form-login">
+                    <span class="close">&times;</span>
+                    <h1 class="form-heading">Đăng nhập</h1>
+                    <div class="form-group">
+                        <i class="far fa-user"></i>
+                        <input id="tendn" type="text" class="form-input" placeholder="Tên đăng nhập">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-key"></i>
+                        <input id="matkhau" type="password" class="form-input" placeholder="Mật khẩu">
+                        <div id="eye">
+                            <i class="far fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="quenmk_dangki">
+                        <a href="" class="forgot">Quên mật khẩu?</a>
+                        <a href="" class="forgot">Đăng kí</a>
+                    </div>
+                    <button type="submit" class="button-login">ĐĂNG NHẬP</button>
+                    <div class="giua">
+                        <div class="ngang"></div>
+                        <p class="hoac">HOẶC</p>
+                        <div class="ngang"></div>
+                    </div>
+                    
+                    <a href="" type="submit" class="button-login"> <img src="https://cdn.frd-dws.de/media/images/1451/5fe1b10d7e8765.90105056.png" alt="facebook" class="login-icon">Đăng nhập với facebook</a>
+                    <a href="" type="submit" class="button-login"> <img src="https://th.bing.com/th/id/R.e4fc1fd86127138fa3cc8b4f300d4b98?rik=5FJxhNY2MdYSYQ&riu=http%3a%2f%2fwww.userlogos.org%2ffiles%2flogos%2f48083_szop_gracz%2fgoogle_-g-_logo_1.png&ehk=oyLL4Q3oAoSBjhumhh%2baHDct5x4ceWpYe5yM8NyXjbo%3d&risl=&pid=ImgRaw&r=0" alt="google" class="login-icon">Đăng nhập với google</a>
+                </form>
+            </div>
+        </div>  
+        <div class="menuheader">  
+        <header >
+          <div class="toolbar">
+            <!-- <div class="tophead">
+                <img src="images/top-banner-giao-nhanh-mien-phi.jpg" alt="">
+            </div> -->
+            <!-- <a href="http:/vku.udn.vn" class="logohome">
+                     <img src="images/house-love-logo-600w-1126856939.png" alt="Logo"> 
+                    TRANG CHU
+            </a>
+            <a href="">DANH MUC</a> -->
+                
+                <!-- <a href="#" class="logo"><img src="images/kisspng-laptop-dell-macbook-logo-computer-illustration-5b361e658d84e7.2171410415302733815797.png" alt="Logo"></a> -->
+               <div class="menu-pc">
+                <ul id="main-menu">
+                  <li><a href="trangchu.html" target="page"><i class="ti-home"> </i></a></li>
+                  <li class="search">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm">
+                    <button type="submit">Tìm kiếm</button>
+                  </li>
+                  <li><a href="#" ><i class="ti-menu" > </i> Danh mục</a>
+                     <ul class="sub-menu">
+                       <li><a href="laptop.html" target="page"><i class="ti-desktop"> </i>Laptop/PC</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Apple</a></li>
+                            <li><a href="">Acer</a></li>
+                            <li><a href="">Dell</a></li>
+                            <li><a href="">Lenovo</a></li>
+                            <li><a href="">Asus</a></li>
+                            <li><a href="">Các hãng khác</a></li>
+                        </ul>
+                      </li>
+                     <li><a href="dienthoai.html" target="page"><i class="ti-mobile"> </i>Điện Thoại Di Động</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Iphone</a></li>
+                            <li><a href="">SamSung</a></li>
+                            <li><a href="">Xiaomi</a></li>
+                            <li><a href="">Huawei</a></li>
+                            <li><a href="">Nokia</a></li>
+                            <li><a href="">Các hãng khác</a></li>
+                        </ul>
+                     </li>
+                     <li><a href=""><i class="ti-mouse"> </i>Phụ Kiện LapTop</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Bàn Phím</a></li>
+                            <li><a href="">Chuột máy tính</a></li>
+                            <li><a href="">Quạt tản nhiệt</a></li>
+                            <li><a href="">Tai nghe</a></li>
+                            <li><a href="">Ghê Gaming</a></li>
+                            <li><a href="">Các sản phẩm khác</a></li>
+                        </ul>
+                     </li>
+                     <li><a href=""><i class="ti-image"> </i>Phụ Kiện Điện Thoại</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Tai nghe</a></li>
+                            <li><a href="">Ốp lưng</a></li>
+                            <li><a href="">Các sản phẩm khác</a></li>
+                        </ul>
+                     </li>
+                     <li><a href=""><i class="ti-layers-alt"> </i>Tổng hợp</a>
+                 </ul>
+                 </li>
+                
+                    <li><a href="#"><i class="ti-world"> </i>Khu vực</a>
+                    <ul class="sub-menu">
+                        <li><a href="">Miền Bắc</a></li>
+                        <li><a href="">Miền Trung</a></li>
+                        <li><a href="">Miền Nam</a></li>
+                        
+                    </ul>
+                 </li>
+                 
+                  <li><a href="#"><i class="ti-service"> </i>Dịch vụ</a>
+                    <ul class="sub-menu">
+                        <li><a href=""><i class="ti-user"> </i>Chăm sóc khách hàng</a></li>
+                        <li><a href=""><i class="ti-alert"> </i>Báo Cáo Sản Phẩm</a></li>
+                    </ul>
+                 </li>
+                 <li><a href="#"><i class="ti-shopping-cart"> </i>Giỏ hàng</a></li>
+                 <li><a href="#" ><i class="ti-user"> </i> Tài Khoản</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" id = "button_dangnhap">Đăng nhập</a></li>
+                        <li><a href="#">Đăng kí</a></li>
+                    </ul></li>
+            </ul></div>
+           
+         </div>
+         <div class="main-menu-mobile">
+         <ul class="header-tablet">
+         
+            <li><div class="tranchumobile">
+                <a href="trangchu.html" target="page"><i class="ti-home"> </i></a>
+            </div></li>
+          
+                <li> <div class="danhmuctablet">
+                
+               <label for="btn-submenumobile" href="" target="">Danh Mục</a></label>
+               <input type="checkbox" hidden class="btn-submenumobile" name="" id="btn-submenumobile">
+               <label for="btn-submenumobile" class="menu-btn--overlay1"></label>
+               <ul class="submenu-mobile1">
+                <li><a href="laptop.html" target="page"><i class="ti-desktop"> </i>LapTop</a></li>
+                <li><a href="dienthoai.html" target="page"><i class="ti-mobile"> </i>Điện thoại</a></li>
+                <li><a href=""><img src="	https://cellphones.com.vn/media/icons/menu/icon-cps-220.svg" alt="icon">Phụ kiện Điện Thoại</a></li>
+                <li><a href=""><i class="ti-mouse"> </i>Phụ kiện Máy Tính</a></li>
+                <li><a href=""><i class="ti-layers-alt"> </i>Tổng hợp</a></li>
+            </ul>
+                
+            </div></li>
+            
+      
+                <div class="thanhtimkiem">
+            <li class="searchmb">
+                <input type="text" placeholder="Tìm kiếm sản phẩm">
+                <button type="submit">Tìm kiếm</button>
+              </li></div>
+          <li><div class="iconmenu">
+        <label for="menu-mobileinput" class="menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+        </label>
+    </div>
+</li>
+    
+         <input type="checkbox" hidden class="btn-input" name="" id="menu-mobileinput">
+        
+         <label for="menu-mobileinput" class="menu-btn--overlay"></label>
+         <div class="menu--mobile">
+            
+            <label for="menu-mobileinput" class="btn_close">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+            </label>
+            <ul id="main-menu-moble">
+               
+                <li><label for="btn-inputds" href="#" class="menu_link"><i class="ti-layers-alt" >&nbsp</i>Danh mục sản phẩm &nbsp<i class="fa-solid fa-chevron-down"></i></label> 
+                <input type="checkbox" hidden class="btn-inputds" name="" id="btn-inputds">
+                <ul class="submenu-mobile">
+                <li><a href="laptop.html" target="page" ><i class="ti-desktop"> </i>Laptop/PC</a></li>
+                 <li><a href="dienthoai.html" target="page"><i class="ti-mobile"> </i>Điện Thoại Di Động</a></li>
+                 <li><a href=""><i class="ti-mouse"> </i>Phụ Kiện LapTop</a></li>
+                 <li><a href=""><img src="https://cellphones.com.vn/media/icons/menu/icon-cps-30.svg" width="19px" height="19px" alt="icon">&nbspPhụ Kiện Điện Thoại</a></li>
+                 <li><a href=""><i class="ti-layers-alt"> </i>Tổng hợp</a> </li>
+                </ul></li>
+              <li><a href="#" class="menu_link"><i class="ti-face-smile">   </i> &nbsp  Dịch vụ</a> </li>
+             <li><a href="#" class="menu_link"><i class="ti-shopping-cart" >   </i> &nbsp  Giỏ hàng</a></li>
+             <li><label for="btn-inputtk" href="#" class="menu_link"><i class="ti-user" >&nbsp</i>Tài khoản &nbsp<i class="fa-solid fa-chevron-down"></i></label> 
+                <input type="checkbox" hidden class="btn-inputtk" name="" id="btn-inputtk">
+                <ul class="submenu-mobiletk">
+                    <li><a href="login.html" target="page">Đăng nhập</a></li>
+                 <li><a href="#">Đăng kí</a></li>
+                </ul></li>
+        </ul>
+    </div>
+</ul>
+</div>
+</div>
+         </header>
+         <div class="toolbar-placeholder"></div>
+         <nav class="navbar">
+          <ul id="main-menu2">
+              <li><a href="laptop.html" target="page">Laptop/PC </a>
+                    <ul class="sub-menu2">
+                        <li><a href="">Apple</a></li>
+                        <li><a href="">Acer</a></li>
+                        <li><a href="">Dell</a></li>
+                        <li><a href="">Lenovo</a></li>
+                        <li><a href="">Asus</a></li>
+                        <li><a href="laptop.html" target="page">Các hãng khác</a></li>
+                    </ul>
+                </li>
+                <li><a href="dienthoai.html" target="page"> Điện Thoại </a>
+                  <ul class="sub-menu2">
+                      <li><a href="">Iphone</a></li>
+                      <li><a href="">SamSung</a></li>
+                      <li><a href="">Xiaomi</a></li>
+                      <li><a href="">Huawei</a></li>
+                      <li><a href="">Nokia</a></li>
+                      <li><a href="dienthoai.html" target="page">Các hãng khác</a></li>
+                  </ul>
+              </li>
+              <li><a href="#"> Màn Hình </a>
+                  <ul class="sub-menu2">
+                      <li><a href="">Apple</a></li>
+                      <li><a href="" >Lenovo</a>
+                      <li><a href="">Dell</a></li>
+                      <li><a href="" >Asus</a></li>
+                      <li><a href="">Apple</a></li>
+                  </ul>
+              </li>
+              <li><a href="#"> Build PC </a></li>
+              <li><a href="#"> Phụ Kiện Điện Thoại </a>
+                  <ul class="sub-menu2">
+                      <li><a href="">Tai Nghe</a></li>
+                      <li><a href="">Sạc Điện Thoại</a></li>
+                      <li><a href="">Pin Dự Phòng</a></li>
+                      <li><a href="">Khác</a></li>
+                  </ul>
+              </li>
+              <li><a href=""> Phụ Kiện Máy Tính</a>
+                  <ul class="sub-menu2">
+                  <li><a href="">Bàn Phím</a></li>
+                      <li><a href="">Chuột máy tính</a></li>
+                      <li><a href="">Quạt tản nhiệt</a></li>
+                      <li><a href="">Tai nghe</a></li>
+                      <li><a href="">Ghế Gaming</a></li>
+                      <li><a href="">Khác...</a></li>
+                  </ul>
+              </li>
+          </ul>
+  
+         </nav>
+     
+         <article>
+            <div class="noidung">
+            <iframe name="page" src="trangchu.html" frameborder="0"></iframe>
+            </div>
+         </article>
+      <footer class="footer">
+        <div class="containerft">
+            <div class="row">
+                <div class="footer-col">
+                    <h3>Trang Chủ</h3>
+                    <ul>
+                        <li><a href="">Home</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Danh mục</h3>
+                    <ul>
+                        <li><a href="">Điện Thoại</a></li>
+                        <li><a href="">Laptop/PC</a></li>
+                        <li><a href="">Linh kiện điện thoại</a></li>
+                        <li><a href="">Linh kiện máy tính </a></li>
+                        <li><a href="">Khuyến mãi</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Trợ Giúp</h3>
+                    <ul>
+                        <li><a href="">Giao hàng</a></li>
+                        <li><a href="">Sản phẩm</a></li>
+                        <li><a href="">Thanh Toán</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Theo dõi</h3>
+                    <ul>
+                        <li><a href=""><i class="ti-google"></i>&nbspGoogle</a></li>
+                        <li> <a href=""><i class="ti-facebook"></i>&nbspFacebook</a></li>
+                        <li> <a href=""><i class="ti-twitter-alt"></i>&nbspTwitter</a></li>
+                        <li> <a href=""><i class="ti-youtube"></i>&nbspYoutube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="banquyen">
+                <h5>&#169 Bản quyền thuộc nhóm 9 Thiết kế Web(9)</h5>
+            </div>
+        </div>
+      </footer>
+  </div>
+      </div>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            // alert("ok")
+            // Tìm tất cả các li có menu con và thêm vào nó class has-child
+            $('.sub-menu').parent('li').addClass('has-child');
+        });
+    </script>
+    <script>
+        function Dropdown(element){
+            element.nextElementSibling.classlist.add("active")
+        }
+    </script>
+       <script>
+        var mainMenu = document.getElementById("main-menu");
+        var mainMenu2 = document.getElementById("main-menu2");
+      
+        mainMenu.addEventListener("mouseover", function() {
+          mainMenu2.style.pointerEvents = "none";
+        });
+      
+        mainMenu.addEventListener("mouseout", function() {
+          mainMenu2.style.pointerEvents = "auto";
+        });
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script
+  type="text/javascript"
+  src="https://code.jquery.com/jquery-1.11.0.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="js/slider.js"></script>
+</body>
+</html>

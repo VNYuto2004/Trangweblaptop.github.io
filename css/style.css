@@ -1,0 +1,3199 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&display=swap');
+#container{
+    /* width: 1300px;
+    height: 2000px; */
+    /* background-color: rgb(232, 234, 234); */
+    margin: 0 auto;
+    z-index: -1;
+    /* max-width: 1000px; */
+
+}
+body{
+  max-width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.15;
+
+}
+/* .container1{
+  max-width: 960px;
+  margin: 0px auto;
+
+} */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+header{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: rgb(234, 21, 64);
+    color: #fff;
+    height: 110px;
+    max-width: 100%;
+    text-align: center;
+    display: inline;
+    justify-content: space-between;
+    justify-items: center;
+    flex-wrap: nowrap;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    position: fixed;
+    white-space: nowrap;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    
+}
+
+/* .tophead{
+    width: 100%;
+    height: 15px;
+    background-color: blanchedalmond;
+    margin-bottom: 0px;
+    overflow: hidden;
+    border-radius: 10px;
+} */
+.tophead img{
+  width: 100%; /* Đảm bảo hình ảnh logo lấp đầy vùng bo góc */
+  height: 100%;
+  object-fit: cover;
+}
+.toolbar {
+    background-color: rgb(234, 21, 64);
+    color: #fff;
+    height: 110px;
+    max-width: 100%;
+    text-align: center;
+    display: inline;
+    justify-content: space-between;
+    justify-items: center;
+    flex-wrap: nowrap;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    position: fixed;
+    white-space: nowrap;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  .menuheader{
+    max-width: 100%;
+  }
+  .logo{
+    max-width:100%;
+    max-width: 200px;
+    height: 110px;
+    max-height: 110px;
+    display: inline-block;
+    margin-bottom: 10px;
+    border-radius: 10px; /* Sử dụng giá trị 50% để làm tròn góc thành hình tròn */
+    overflow: hidden;
+  }
+  #logo img {
+    width: 100%; /* Đảm bảo hình ảnh logo lấp đầy vùng bo góc */
+    height: 100%;
+    object-fit: cover; /* Đảm bảo hình ảnh không bị kéo dãn hoặc bị bóp méo */
+  }
+  #logo .ti-menu-alt{
+    margin-top: 20px;
+  }
+  .toolbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flow-root;
+    
+    
+  }
+  .toolbar>ul{
+    white-space: nowrap;
+  }
+  .toolbar ul li {
+    display: inline;
+      position: relative;
+    flex-wrap: nowrap;
+    margin-right: 0px;
+    
+    
+   
+  }
+  
+  .toolbar ul li a {
+    display: inline-block;
+    padding: 49px;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    
+    
+  }
+  .toolbar ul li a.logo img {
+    height: 120px;
+    width:200px;
+    max-height: 100px; /* Đặt kích thước tối đa cho chiều cao của logo */
+    max-width:60px; /* Đặt kích thước tối đa cho chiều rộng của logo */
+    vertical-align: middle; /* Canh giữa logo theo chiều dọc */
+    
+    
+  }
+  
+  /* .toolbar ul li a:hover {
+    background-color: #555;
+    
+  } */
+  /* .main-menu ul>li>a{
+    flex-wrap: nowrap;
+    display: flex;
+    white-space: nowrap;
+    
+  } */
+ 
+
+  #main-menu ul.sub-menu{
+    position: absolute;
+    background-color: #131921;
+    padding: 2px 0px;
+    list-style: none;
+    max-width: auto;
+    border: 1px solid #3e3939;
+    display: none;
+    top: 60px;
+    left: 55px;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+    border-radius: 10px;
+  }
+  #sub-menukv {
+    display: none;/* Ẩn danh sách con ban đầu*/
+    max-height: 200px; /* Chiều cao tối đa của thanh cuộn */
+    overflow-y: scroll; /* Hiển thị thanh cuộn nếu danh sách dài hơn chiều cao tối đa */
+}
+#sub-menukv:hover{
+  display: block;
+}
+
+.open {
+    display: block; /* Hiển thị danh sách con khi có class "open" */
+}
+  #main-menu li:hover>.sub-menu{
+    display: block;
+    pointer-events: auto;
+  }
+
+  #main-menu ul.sub-menu a{
+    width: auto;
+    height: auto;
+    box-sizing: content-box;
+    padding: 8px 15px;
+    border-bottom: 1px solid #333;
+    display: block;
+    font-size: 17px;
+  }
+  
+  #main-menu ul.sub-menu li:hover>a{
+    border-bottom: 1px solid #d3c9c9;
+    color: crimson;
+  }
+  #main-menu ul.sub-menu li:last-child a{
+    border: none;
+  }
+  #main-menu ul.sub-menu ul.sub-menu{
+    left: 108px;
+    top: -30px;
+    border-radius: 10px;
+  }
+  #main-menu ul.sub-menu ul.sub-menu li a{
+   white-space: nowrap;
+  }
+  .search input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+  }
+  
+  .search button {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+  }
+  /*Thiết lập border khi hover*/
+  #main-menu>li>a{
+    position: relative;
+  }
+  #main-menu>li>a::before{
+    content: "";
+    height: 4px;
+    width: 0px;
+    background: rgb(248, 247, 247);
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  #main-menu>li:hover>a::before{
+    width: 100%;
+   
+  }
+  #main-menu>li.has-child::after{
+    font: var(--fa-font-solid);
+    content: "\f107";
+    color: #989da5;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    padding:0px 0px;
+  }
+  /* #main-menu .sub-menu>li.has-child::after{
+    font: var(--fa-font-solid);
+    content: "\f105";
+    color: #989da5;
+    position: absolute;
+    top: -2px;
+    right: -95px;
+    padding: 20px 0px;
+  } */
+  #main-menu .sub-menu>li.has-child:hover::after{
+    color: crimson;
+
+  }
+  
+  .toolbar-placeholder {
+    height: 113px; /* Chiều cao của phần toolbar */
+  }
+/* header a{
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+    text-align: center;
+} */
+
+nav{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(122, 226, 223);
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 2px;
+    left: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    
+}
+/* .navbar{
+  margin-top: 120px;
+} */
+#main-menu2{
+  display: inline-flex;
+  list-style: none;
+  margin: 0px 20px;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+  box-sizing: border-box;
+  font-weight: bold;
+  
+  
+}
+#main-menu2>li:hover{
+  background-color: rgb(192, 231, 241);
+  border-radius: 50px;
+  transition: background-color 0.5s ease;
+}
+#main-menu2>li>a:hover{
+  /* color: #ffffff; */
+}
+#main-menu2 li a{
+  color: #221a1a;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  margin: 0 10px;
+  padding: 18px 20px;
+  
+  
+}
+#main-menu2 li{
+  position: relative;
+  
+}
+#main-menu2 ul.sub-menu2{
+    position: absolute;
+    background-color: rgb(147, 201, 214);
+    padding: 0px 0px;
+    list-style: none;
+    width: 140px;
+    height: auto;
+    /* border: none; */
+    display: none;
+    top: 50px;
+    left:70px;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 10px;
+    border: 1px solid #ffe8e8;
+    
+  }
+  #main-menu2 ul.sub-menu2 a{
+    padding: 8px 15px;
+    border-bottom: 1px solid #343232;
+  }
+  #main-menu2 ul.sub-menu2 li:last-child a{
+    border: none;
+  }
+  #main-menu2 ul.sub-menu2 li:hover a{
+    border-bottom: 1px solid #424242;
+    color: rgb(117, 120, 121);
+  }
+    #main-menu2 ul.sub-menu2 li:last-child:hover a{
+    border-bottom: none;
+    color: rgb(117, 120, 121);
+  }
+
+   #main-menu2 li:hover .sub-menu2{
+    display: block;
+    pointer-events: auto;
+  }
+
+article{
+    width: 100%;
+    height: 1180px;
+    background-color: rgb(255, 255, 255);
+    float: left;
+    padding-left: 50px;
+    padding-right: 50px;
+    box-sizing: border-box;
+    overflow: hidden;
+    flex-grow: 1;
+}
+.modau{
+  justify-content: space-between;
+}
+.thanhmodau{
+  display: flex;
+  padding: 10px 0px;
+}
+.danhsachsanpham{
+  max-width: 235px;
+    height: 382px;
+    padding: 10px 16px;
+
+}
+.danhsachsanpham ul{
+   max-width: 173px;
+    height: 360px;
+    border-radius: 15px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.1), 0 2px 6px 2px rgba(60,64,67,.15);
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 0px 44px;
+    list-style: none;
+}
+.danhsachsanpham ul li{
+  padding: 10.36px 15px;
+  border-bottom: 1px solid #989da5;
+  box-sizing: border-box;
+  width: 170px;
+  margin-left: -43px;
+}
+.danhsachsanpham ul li:last-child{
+  border: none;
+}
+.danhsachsanpham ul li:hover{
+  background-color: #d9d9d9;
+  border-radius: 10px;
+}
+.danhsachsanpham ul li a {
+  font-size: 16px;
+  text-decoration: none;
+  list-style: none;
+  color: #767070;
+}
+.danhsachsanpham ul li img{
+  width: 23px;
+  height: auto;
+  margin-top: -3px;
+  margin-bottom: -5px
+}
+.slider{
+  width: 925px;
+  height: 382px;
+  /* display: grid;
+  grid-template-columns: repeat(4,1fr);
+  border: 1px solid #131921;
+  grid-gap: 20px;
+  align-items: center; */
+}
+.imagesld{
+  align-items: center;
+    display: flex;
+    justify-items: center;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: center;
+    height: 317px;
+    margin-bottom: 20px;
+
+}
+.image-items{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.imagesld img{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 12px;
+ 
+}
+.image-title{
+  margin-top: -21px;
+  font-size: 15px;
+  color: #343a40;
+  font-weight: 700;
+  background-color: #fff;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,.1), 0 2px 6px 2px rgba(60,64,67,.1);
+  border-radius: 10px;
+  border-top: none;
+}
+.slick-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(60, 64, 67, .1);
+  color: #FFFF;
+  border: none;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  line-height: 1;
+  padding: 10px 20px;
+  border-radius: 100px;
+  transition: all 0.2s  linear;
+}
+.slick-arrow:hover{
+  background-color: rgba(0, 0, 0, 0.199);
+}
+.slick-prev{
+  left: 0;
+ 
+}
+.slick-next{
+  right: 0;
+}
+.slick-dots{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,100%);
+  list-style: none;
+  display: flex !important;
+  align-items: center;
+  justify-items: center;
+  gap: 0 10px;
+}
+.slick-dots button{
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 1000rem;
+  border: none;
+  outline: none;
+  transition: all 0.2s linear;
+}
+.slick-dots .slick-active button{
+  background-color: crimson;
+}
+
+.rightimg{
+  height: 382px;
+  max-width: 265px;
+  width: 100%;
+  display: block;
+}
+.rightimg{
+  padding-left: 4px;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,.1), 0 2px 6px 2px rgba(60,64,67,.15);
+  display: block;
+  margin-bottom: 15.5px;
+  min-height: calc(33.33333% - 10px);
+  overflow: hidden;
+  width: 400px;
+}
+.rightimg a{
+  border-radius: 10px;
+}
+.rightimg img{
+    float: left;
+    max-width: 241px;
+    height: 127px;
+    border-radius: 25px;
+    padding: 10px;
+}
+.rightimg a img:hover{
+  transform: scale(1.05);
+}
+
+.noidung {
+  flex-basis: 100%;
+  height: 1180px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  justify-content: space-between;
+}
+
+/* .noidung > *{
+  flex-basis: calc(50% - 10px);
+  margin-bottom: 20px; 
+} */
+
+
+iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+
+}
+#container1c5{
+
+}
+
+/* .product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  grid-gap: 20px; 
+} */
+.head-ar-line{
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+#container2{
+  height: 1180px;
+  z-index: -1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* giao dien con lan */
+#container2::-webkit-scrollbar{
+  width: 0px;
+  background: rgb(251, 255, 255);
+}
+#container2::-webkit-scrollbar-thumb{
+  background-color: rgb(208, 217, 219);
+  border-radius: 20px;
+
+}
+#container2::-webkit-scrollbar-thumb:hover{
+  background: rgb(178, 180, 180);
+}
+#containerlt{
+  box-shadow: inset 0 0 5px rgb(208, 217, 219);
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+#container2 .thanhnhucaulaptop{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+#container2 .thanhnhucaulaptop .vanphong{
+  position: relative;
+  
+  background-color: rgb(155, 124, 87);
+  background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-971.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 125px;
+  overflow: hidden;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
+  
+}
+
+#container2 .thanhnhucaulaptop .vanphong a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}#container2 .thanhnhucaulaptop .vanphong:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container2 .thanhnhucaulaptop .gaming{
+  position: relative;
+  
+  background-color: rgb(247, 119, 77);
+  background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-973.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 125px;
+  overflow: hidden;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
+  
+}
+
+#container2 .thanhnhucaulaptop .gaming a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container2 .thanhnhucaulaptop .gaming:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container2 .thanhnhucaulaptop .mongnhe{
+  position: relative;
+  
+  background-color: rgb(255, 143, 143);
+  background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-1071.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 125px;
+  overflow: hidden;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
+  
+}
+
+#container2 .thanhnhucaulaptop .mongnhe a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container2 .thanhnhucaulaptop .mongnhe:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container2 .thanhnhucaulaptop .dohoa{
+  position: relative;
+  
+  background-color: rgb(237, 85, 108);
+  background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-972.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 125px;
+  overflow: hidden;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
+  
+}
+
+#container2 .thanhnhucaulaptop .dohoa a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container2 .thanhnhucaulaptop .dohoa:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container2 .thanhnhucaulaptop .sinhvien{
+  position: relative;
+  
+  background-color: rgb(255, 128, 232);
+  background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-1077.svg);
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 125px;
+  overflow: hidden;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+#container2 .thanhnhucaulaptop .sinhvien a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container2 .thanhnhucaulaptop .sinhvien:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+
+#container2 .thanhnhucaulaptop .camung{
+  position: relative;
+  
+  background-color: rgb(255, 158, 221);
+  background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-974.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 125px;
+  overflow: hidden;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
+  
+}
+
+#container2 .thanhnhucaulaptop .camung a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container2 .thanhnhucaulaptop .camung:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+/*-------------------------*/
+.head-ar-line2{
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+  margin-left: 20px;
+ 
+}
+h4{
+  text-align: center;
+}
+#containerdt{
+  box-shadow: inset 0 0 5px rgb(208, 217, 219);
+  padding: 20px;
+}
+
+#container3 .thanhnhucaudienthoai{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+ 
+ 
+}
+#container3 .thanhnhucaudienthoai .choigame{
+  position: relative;
+  
+  background-color: rgb(15, 15, 15);
+  background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/c/h/ch_i_game.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 125px;
+  overflow: hidden;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
+  
+}
+
+#container3 .thanhnhucaudienthoai .choigame a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .choigame:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container3 .thanhnhucaudienthoai .pin{
+  position: relative;
+  
+  background-color: rgb(151, 145, 145);
+  background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/p/i/pin-trau-0092.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 125px;
+  overflow: hidden;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
+  
+}
+
+#container3 .thanhnhucaudienthoai .pin a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .pin:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container3 .thanhnhucaudienthoai .dungluong{
+  position: relative;
+  
+  background-color: rgb(145, 105, 105);
+    background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/a/p/apple-iphone-14-pro-iphone-14-pro-max-deep-purple-220907_inline.jpg.large.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 125px;
+  overflow: hidden;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
+  
+}
+
+#container3 .thanhnhucaudienthoai .dungluong a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .dungluong:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container3 .thanhnhucaudienthoai .cauhinh{
+  position: relative;
+  
+  background-color: rgb(109, 95, 95);
+    background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/c/a/cauhinhcao.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 125px;
+  overflow: hidden;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
+  
+}
+
+#container3 .thanhnhucaudienthoai .cauhinh a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .cauhinh:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container3 .thanhnhucaudienthoai .mongnhe{
+  position: relative;
+  
+  background-color: rgb(166, 166, 166);
+    background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/m/o/mong-nhe.png);
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 125px;
+  overflow: hidden;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+#container3 .thanhnhucaudienthoai .mongnhe a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .mongnhe:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+
+#container3 .thanhnhucaudienthoai .chupanh{
+  position: relative;
+  
+  background-color: rgb(188, 174, 182);
+    background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/c/a/camera-dt.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 125px;
+  overflow: hidden;
+  width: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
+  
+}
+
+#container3 .thanhnhucaudienthoai .chupanh a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .chupanh:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#tieuchi .cactieuchi {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#tieuchi .cactieuchi .tieuchi {
+  display: inline-block;
+  background-color: #dddbdb;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-right: 10px; /* Khoảng cách giữa các tiêu chí */
+  padding: 0px 0px;
+}
+
+#tieuchi .cactieuchi .tieuchi a {
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+#tieuchi .cactieuchi .tieuchi a:hover {
+  background-color: #c8c8c8;
+  border-radius: 10px;
+  transform: scale(1.05);
+}
+.tieuchisx{
+  
+}
+.tieuchisx .head-ar-line3{
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.tieuchisx .cactieuchisx {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.tieuchisx .cactieuchisx .tieuchi {
+  display: inline-block;
+  background-color: #dddbdb;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-right: 5px;
+  padding: 0px 0px;
+}
+
+.tieuchisx .cactieuchisx .tieuchi a {
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.tieuchisx .cactieuchisx .tieuchi a:hover {
+  background-color: #c8c8c8;
+  border-radius: 10px;
+  transform: scale(1.05);
+}
+/* ----------------------------------------- */
+.thucukgh img{
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.thucukgh img:hover{
+
+}
+.tieuchisp{
+  margin-left: 0px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-items: center;
+
+}
+.tieuchisp .head-ar-line3{
+  font-size: 18px;
+  color: #9d9c9c;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+  margin-left: 20px;
+  text-transform: uppercase;
+}
+.tieuchisp .cactieuchisp {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.tieuchisp .cactieuchisp .tieuchi {
+  display: inline-block;
+  background-color: #dddbdb;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.tieuchisp .cactieuchisp .tieuchi a {
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.tieuchisp .cactieuchisp .tieuchi a:hover {
+  background-color: #c8c8c8;
+  border-radius: 10px;
+  transform: scale(1.05);
+}
+/* --------------------------- */
+#danhsachsp ul.products{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+#danhsachsp ul.products li{
+padding: 0px 3px;
+flex-basis: auto ;
+
+}
+
+#danhsachsp ul.products li .product-item{
+ 
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgb(179, 181, 181);
+  border-radius: 20px;
+  padding: 3px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: table-caption;
+}
+ul.products li .product-item .product-top{
+  position: relative;
+  overflow: hidden;
+}
+
+
+ul.products li .product-top .product-thumb{
+  display: block;
+}
+ul.products li:hover .product-top .product-thumb img{
+  filter: opacity(80%);
+}
+ul.products li .product-top .product-thumb img{
+  max-width: 50%;
+  max-height: 50%;
+  min-width: 200px;
+  min-height: 200px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+ul.products li .product-top a.buy-now{
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  background-color: #f16a82;
+  color: #ffff;
+  padding: 10px 0px;
+  position: absolute;
+  width: 100%;
+  bottom: -36px;
+  left: 0px;
+  transition: 0.25s ease-in-out;
+  opacity: 0.7;
+  border-radius: 10px;
+}
+#danhsachsp ul.products li:hover a.buy-now{
+  bottom: 0px;
+  
+}
+ul.products li .product-infor{
+  padding: 20px 0px;
+
+}
+ul.products li .product-infor a{
+  display: block;
+  text-decoration: none;
+}
+ul.products li .product-infor a.product-cat{
+  font-size: 11px;
+  color: #9e9e9e;
+  text-transform: uppercase;
+  padding: 3px 0px;
+  margin-left: 10px;
+}
+ul.products li .product-infor a.product-name{
+  color: #444;
+  padding: 3px 0px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+ul.products li .product-infor .product-price{
+  font-weight: 800;
+  color: #d70018;
+  padding: 3px 0px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+ul.products li .product-infor .product-price-show{
+  align-items: flex-end;
+  color: #444;
+  display: flex;
+  font-family: sans-serif;
+  line-height: 1;
+}
+ul.products li .product-infor .product-price-show .product-price-through{
+  color: #707070;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 10px 10px;
+    position: relative;
+    -webkit-text-decoration: line-through;
+    text-decoration: line-through;
+    top: 2px;
+}
+.muangay{
+ background-color: red;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-align: center;
+     font-weight: bold;
+    /* display: inline-block; */
+    /* margin-left: 101px;
+    margin-top: -21px */
+  
+}
+.muangay a{
+  text-decoration: none;
+  color: #FFFF;
+  
+}
+.muangay:hover{
+  background-color: rgb(241, 79, 79);
+  transform: scale(1.05);
+}
+/* ------------- */
+.trangketiep{
+  /* align-items: center;
+  flex-wrap: wrap;
+  justify-items: center;
+ 
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #dddbdb;
+  border-radius: 10px;
+  margin-top: 5px; */
+  text-align: center;
+  padding: 20px;
+
+
+}
+
+
+.trangketiep a {
+  text-decoration: none;
+  color: #333;
+  background-color: #dddbdb;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 20px;
+  width: auto;
+  align-items: center;
+  border-radius: 5px;
+
+}
+
+.trangketiep a:hover {
+  background-color: #c8c8c8;
+  border-radius: 10px;
+  transform: scale(1.05);
+}
+
+
+/* ------------- */
+
+.footer{
+    width: 100%;
+    max-height: 1000px;
+    background-color: #24262b;
+    clear: both;
+    margin-top: 10px;
+    padding: 30px 0;
+}
+.footer ul{
+  list-style: none;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #666;
+}
+.containerft{
+  margin: auto;
+}
+.footer-col{
+width: 25%;
+padding: 0 15px;
+}
+.footer-col h3{
+   font-size: 18px;
+   color: #FFFF;
+   text-transform: capitalize;
+   margin-bottom: 35px;
+   font-weight: 500;
+   position: relative;
+}
+.footer-col h3::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: rgb(255, 0, 0);
+  height: 2px;
+  width: 50px;
+  box-sizing: border-box;
+}
+.footer-col ul li:not(:last-child){
+  margin-bottom: 10px;
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transform: all 0.3 ease;
+}
+.footer-col ul li a:hover{
+  color: #ffff;
+  padding-left: 8px;
+}
+.banquyen{
+  width: 100%;
+  max-height: 100px;
+  margin-top: 20px;
+}
+.banquyen h5{
+  font-size: 10px;
+  font-weight: 300;
+  color: #ffff;
+  text-align: center;
+}
+
+
+.main-menu-mobile{
+  box-sizing: border-box;
+  display: flex;
+  padding: auto;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/*responsive*/
+.header-mobile{
+  /* display: inline-block; */
+  justify-items: center;
+  display: flex;
+}
+.tranchumobile{
+  display: none;
+}
+.tranchumobile a{
+  color: #ffff;
+  text-decoration: none;
+  font-size: 29px;
+  padding-left: 30px;
+}
+.main-menu-mobile{
+  list-style: none;
+}
+.header-tablet{
+  display: contents;
+  justify-content: space-between;
+  list-style: none;
+}
+.danhmuctablet{
+  display: none;
+  font-size: 20px;
+  position: relative;
+}
+.danhmuctablet a{
+  color: #ffff;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 30px;
+}
+.submenu-mobile1{
+  position: absolute;
+  text-decoration: none;
+  list-style: none;
+  display: none;
+  border: 1px  #707070;
+  background-color: #ffc7c7;
+  border-radius: 10px;
+  box-sizing: border-box;
+    margin-top: 12px;
+    margin-left: 15px;
+    z-index: 5;
+}
+.submenu-mobile1 li{
+  border-radius: 10px;
+}
+.submenu-mobile1 li img{
+  width: 20px;
+  height: 20px;
+}
+.menu-btn--overlay1{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(255, 243, 243, 0);
+  display: none;
+  z-index: 5;
+  animation: fadeIn linear 0.2s;
+}
+.submenu-mobile1 li:hover{
+    background-color: #ffd3d3;
+}
+.submenu-mobile1 li a {
+  border: #000000;
+    text-decoration: none;
+    list-style: none;
+    color: #333;
+    display: flex;
+    padding: 20px;
+    font-size: 1rem;
+}
+#btn-submenumobile:checked ~ .submenu-mobile1{
+  display: block;
+}
+#btn-submenumobile:checked ~ .menu-btn--overlay1{
+  display: block;
+}
+
+.menu-btn{
+  width: 28px;
+  height: auto;
+  color: #ff0000;
+  display: none;
+  justify-items: center;
+  margin-right: 15px;
+  /* margin-top: 30px;
+  margin-left: 900px; */
+  
+}
+.menu-btn--overlay{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.3);
+  display: none;
+  z-index: 11;
+  animation: fadeIn linear 0.2s;
+}
+.btn_close{
+  width: 25px;
+  height: 25px;
+  font-size: 5px;
+  color: #666;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+ 
+}
+.menu--mobile{
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+width: 320px;
+max-width: 100%;
+background-color: #fff;
+border: 1px solid #707070;
+z-index: 11;
+transform: translateX(100%);
+border-radius: 10px;
+opacity: 0;
+transition: transform linear 0.2s, opacity linear 0.2s;
+overflow: auto;
+overflow-x: hidden;
+}
+
+#main-menu-moble{
+margin-top: 46px;
+list-style: none;
+padding-left: 0;
+justify-items: left;
+
+}
+.searchmb{
+  display: none;
+}
+.searchmb input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.searchmb button {
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+}
+.btn-input{
+  display: none;
+}
+.menu_link{
+  border: #000000;
+  text-decoration: none;
+  list-style: none;
+  color: #333;
+  display: flex;
+  padding: 20px ;
+  /* padding-left: 20px;
+  margin-left: 20px; */
+  font-size: 1.4rem;
+  border-bottom: 1px solid #767070;
+}
+
+.menu_link:hover{
+  background-color: #cbcbcb;
+  border-radius: 10px;
+}
+#menu-mobileinput:checked ~ .menu-btn--overlay{
+  display: block;
+}
+@keyframes dropdown-animation {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+#menu-mobileinput:checked ~ .menu--mobile {
+  transform: translateX(0);
+  opacity: 1;
+}
+.submenu-mobile{
+  text-decoration: none;
+  list-style: none;
+  display: none;
+  border: 1px solid #707070;
+  border-radius: 10px;
+  box-sizing: border-box;
+  animation: dropdown-animation 0.5s ease;
+
+}
+.submenu-mobile li a{
+  border: #000000;
+  text-decoration: none;
+  list-style: none;
+  color: #333;
+  display: flex;
+  padding: 20px ;
+  /* padding-left: 20px;
+  margin-left: 20px; */
+  font-size: 0.9rem;
+ 
+}
+.submenu-mobile li:hover{
+  background-color: #d4d4d4;
+}
+.btn-inputds:checked ~ .submenu-mobile{
+  display: block;
+}
+
+.submenu-mobiletk{
+  text-decoration: none;
+  list-style: none;
+  display: none;
+  border: 1px solid #707070;
+  border-radius: 10px;
+  box-sizing: border-box;
+  animation: dropdown-animation 0.5s ease;
+
+}
+.submenu-mobiletk li a{
+  border: #000000;
+  text-decoration: none;
+  list-style: none;
+  color: #333;
+  display: flex;
+  padding: 20px ;
+  /* padding-left: 20px;
+  margin-left: 20px; */
+  font-size: 0.9rem;
+ 
+}
+.submenu-mobiletk li:hover{
+  background-color: #d4d4d4;
+}
+.btn-inputtk:checked ~ .submenu-mobiletk{
+  display: block;
+}
+
+
+/* .logo{
+  display: none;
+} */
+/* Tablet*/
+@media only screen and (max-width: 1023px)
+{
+  header{
+    display: flex;
+    max-width: 1023px;
+    background-color:rgb(234, 21, 64);
+    justify-items: center;
+  }
+  .toolbar{
+    justify-content: right;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    display: flex;
+    margin-top: 37px;
+    right: 20px;
+  }
+  .logo{
+    display: block;
+  }
+  #main-menu{
+    display: none;
+  }
+  .tranchumobile{
+    display: block;
+  }
+  .danhmuctablet{
+    display: block;
+  }
+  .searchmb{
+    display: block;
+  }
+  .menu-btn{
+    display: block;
+  }
+  .rightimg{
+    display: none;
+  }
+  nav{
+    display: none;
+  }
+  h4{
+    text-align: left;
+  }
+  /* --------------------------------------- */
+  .danhsachsanpham{
+    max-width: 196px;
+    height: 378px;
+    margin-left: -11px;
+    padding: 10px 13px;
+  
+  }
+  .danhsachsanpham ul{
+     max-width: 173px;
+      height: 360px;
+      border-radius: 15px;
+      box-shadow: 0 1px 2px 0 rgba(60,64,67,.1), 0 2px 6px 2px rgba(60,64,67,.15);
+      box-sizing: border-box;
+      border-radius: 10px;
+      display: inline-block;
+      padding: 0px 44px;
+      list-style: none;
+  }
+  .danhsachsanpham ul li{
+    padding: 10.36px 15px;
+    border-bottom: 1px solid #989da5;
+    box-sizing: border-box;
+    width: 170px;
+    margin-left: -43px;
+  }
+  .danhsachsanpham ul li:last-child{
+    border: none;
+  }
+  .danhsachsanpham ul li:hover{
+    background-color: #d9d9d9;
+    border-radius: 10px;
+  }
+  .danhsachsanpham ul li a {
+    font-size: 16px;
+    text-decoration: none;
+    list-style: none;
+    color: #767070;
+  }
+  .danhsachsanpham ul li img{
+    width: 23px;
+    height: auto;
+    margin-top: -3px;
+    margin-bottom: -5px
+  }
+  /* ------------------------------------------- */
+  .slider{
+    width: 504px;
+    height: 382px;
+    /* display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border: 1px solid #131921;
+    grid-gap: 20px;
+    align-items: center; */
+  }
+  .imagesld{
+    align-items: center;
+      display: flex;
+      justify-items: center;
+      width: 100%;
+      margin-top: 10px;
+      justify-content: center;
+      height: 317px;
+      margin-bottom: 20px;
+  
+  }
+  .image-items{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .imagesld img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 12px;
+   
+  }
+  .image-title{
+    margin-top: -21px;
+    font-size: 15px;
+    color: #343a40;
+    font-weight: 700;
+    background-color: #fff;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.1), 0 2px 6px 2px rgba(60,64,67,.1);
+    border-radius: 10px;
+    border-top: none;
+  }
+  .slick-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(60, 64, 67, .1);
+    color: #FFFF;
+    border: none;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    line-height: 1;
+    padding: 10px 20px;
+    border-radius: 100px;
+    transition: all 0.2s  linear;
+  }
+  .slick-arrow:hover{
+    background-color: rgba(0, 0, 0, 0.199);
+  }
+  .slick-prev{
+    left: 0;
+   
+  }
+  .slick-next{
+    right: 0;
+  }
+  .slick-dots{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,100%);
+    list-style: none;
+    display: flex !important;
+    align-items: center;
+    justify-items: center;
+    gap: 0 10px;
+  }
+  .slick-dots button{
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 1000rem;
+    border: none;
+    outline: none;
+    transition: all 0.2s linear;
+  }
+  .slick-dots .slick-active button{
+    background-color: crimson;
+  }
+  /* --------------------------------------- */
+  /* -------- */
+  #container2 .thanhnhucaulaptop{
+    justify-content: left;
+  }
+  #container2 .thanhnhucaulaptop .vanphong{
+    position: relative;
+    
+    background-color: rgb(155, 124, 87);
+    background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-971.svg);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 25%;
+   
+    
+  }
+  
+  #container2 .thanhnhucaulaptop .vanphong a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 120px; /* Đặt chiều rộng mong muốn */
+    height: 125px;
+    margin-right: 10px;
+  }#container2 .thanhnhucaulaptop .vanphong:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+    transform: scale(1.25); /* Hiệu ứng phóng to */
+  }
+  #container2 .thanhnhucaulaptop .gaming{
+    position: relative;
+    
+    background-color: rgb(247, 119, 77);
+    background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-973.svg);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 25%;
+  }
+  
+  #container2 .thanhnhucaulaptop .gaming a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 120px; /* Đặt chiều rộng mong muốn */
+    height: 125px;
+    margin-right: 10px;
+  }
+  #container2 .thanhnhucaulaptop .gaming:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+    transform: scale(1.25); /* Hiệu ứng phóng to */
+  }
+  #container2 .thanhnhucaulaptop .mongnhe{
+    position: relative;
+    
+    background-color: rgb(255, 143, 143);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 25%;
+  }
+  
+  #container2 .thanhnhucaulaptop .mongnhe a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 120px; /* Đặt chiều rộng mong muốn */
+    height: 125px;
+    margin-right: 10px;
+  }
+  #container2 .thanhnhucaulaptop .mongnhe:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+    transform: scale(1.25); /* Hiệu ứng phóng to */
+  }
+  #container2 .thanhnhucaulaptop .dohoa{
+    position: relative;
+    
+    background-color: rgb(237, 85, 108);
+    background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-972.svg);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 25%;
+  }
+  
+  #container2 .thanhnhucaulaptop .dohoa a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 120px; /* Đặt chiều rộng mong muốn */
+    height: 125px;
+    margin-right: 10px;
+  }
+  #container2 .thanhnhucaulaptop .dohoa:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+    transform: scale(1.25); /* Hiệu ứng phóng to */
+  }
+  #container2 .thanhnhucaulaptop .sinhvien{
+    position: relative;
+    
+    background-color: rgb(255, 128, 232);
+    background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-1077.svg);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 25%;
+  }
+  
+  #container2 .thanhnhucaulaptop .sinhvien a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 120px; /* Đặt chiều rộng mong muốn */
+    height: 125px;
+    margin-right: 10px;
+  }
+  #container2 .thanhnhucaulaptop .sinhvien:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+    transform: scale(1.25); /* Hiệu ứng phóng to */
+  }
+  
+  #container2 .thanhnhucaulaptop .camung{
+    position: relative;
+    
+    background-color: rgb(255, 158, 221);
+    background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-974.svg);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 25%;
+  }
+  
+  #container2 .thanhnhucaulaptop .camung a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 120px; /* Đặt chiều rộng mong muốn */
+    height: 125px;
+    margin-right: 10px;
+  }
+  #container2 .thanhnhucaulaptop .camung:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+    transform: scale(1.25); /* Hiệu ứng phóng to */
+  }
+  /* ------------- */
+  
+#container2 .thanhnhucaulaptop{
+  display: flex;
+  left: 0;
+  box-sizing: border-box;
+  
+}
+/* ------------------ */
+#container3 .thanhnhucaudienthoai{
+  display: flex;
+  justify-content: left;
+  left: 0;
+  box-sizing: border-box;
+ 
+}
+#container3 .thanhnhucaudienthoai .choigame{
+  position: relative;
+  
+  background-color: rgb(15, 15, 15);
+  background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/c/h/ch_i_game.png);
+  background-repeat: no-repeat;
+  background-size: 97px;
+  background-position-x: right;
+  border-radius: 10px;
+  background-position-y: bottom;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 50px;
+  overflow: hidden;
+  width: 90px;
+  height: 90px;
+  flex-basis: 33%;
+  
+}
+
+#container3 .thanhnhucaudienthoai .choigame a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .choigame:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container3 .thanhnhucaudienthoai .pin{
+  position: relative;
+  
+  background-color: rgb(151, 145, 145);
+  background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/p/i/pin-trau-0092.png);
+  background-repeat: no-repeat;
+  background-size: 97px;
+  background-position-x: right;
+  border-radius: 10px;
+  background-position-y: bottom;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 50px;
+  overflow: hidden;
+  width: 90px;
+  height: 90px;
+  flex-basis: 33%;
+  
+}
+
+#container3 .thanhnhucaudienthoai .pin a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .pin:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container3 .thanhnhucaudienthoai .dungluong{
+  position: relative;
+  
+  background-color: rgb(145, 105, 105);
+    background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/a/p/apple-iphone-14-pro-iphone-14-pro-max-deep-purple-220907_inline.jpg.large.png);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+  
+}
+
+#container3 .thanhnhucaudienthoai .dungluong a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .dungluong:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container3 .thanhnhucaudienthoai .cauhinh{
+  position: relative;
+  
+  background-color: rgb(109, 95, 95);
+    background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/c/a/cauhinhcao.png);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+  
+}
+
+#container3 .thanhnhucaudienthoai .cauhinh a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .cauhinh:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container3 .thanhnhucaudienthoai .mongnhe{
+  position: relative;
+  
+  background-color: rgb(166, 166, 166);
+    background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/m/o/mong-nhe.png);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+}
+
+#container3 .thanhnhucaudienthoai .mongnhe a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .mongnhe:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+
+#container3 .thanhnhucaudienthoai .chupanh{
+  position: relative;
+  
+  background-color: rgb(188, 174, 182);
+    background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/c/a/camera-dt.png);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+  
+}
+
+#container3 .thanhnhucaudienthoai .chupanh a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .chupanh:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+/* ------------------ */
+/* 0000000000000000000 */
+#danhsachsp ul.products{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+#danhsachsp ul.products li{
+  padding: 0px 3px;
+  flex-basis: 30%;
+
+}
+
+#danhsachsp ul.products li .product-item{
+ 
+  box-sizing: border-box;
+    box-shadow: 0 0 5px rgb(179, 181, 181);
+    border-radius: 20px;
+    padding: 3px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-height: 370px;
+    max-width: 220px;
+    display: table-caption;
+}
+ul.products li .product-item .product-top{
+  position: relative;
+  overflow: hidden;
+}
+
+
+ul.products li .product-top .product-thumb{
+  display: block;
+}
+ul.products li:hover .product-top .product-thumb img{
+  filter: opacity(80%);
+}
+ul.products li .product-top .product-thumb img{
+  max-width: 50%;
+    max-height: 50%;
+    min-width: 200px;
+    min-height: 187px;
+    width: auto;
+    height: auto;
+    display: block;
+}
+ul.products li .product-top a.buy-now{
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  background-color: #f16a82;
+  color: #ffff;
+  padding: 10px 0px;
+  position: absolute;
+  width: 100%;
+  bottom: -36px;
+  left: 0px;
+  transition: 0.25s ease-in-out;
+  opacity: 0.7;
+  border-radius: 10px;
+}
+#danhsachsp ul.products li:hover a.buy-now{
+  bottom: 0px;
+  
+}
+ul.products li .product-infor{
+  padding: 20px 0px;
+
+}
+ul.products li .product-infor a{
+  display: block;
+  text-decoration: none;
+}
+ul.products li .product-infor a.product-cat{
+  font-size: 11px;
+  color: #9e9e9e;
+  text-transform: uppercase;
+  padding: 3px 0px;
+  margin-left: 10px;
+}
+ul.products li .product-infor a.product-name{
+  color: #444;
+  padding: 3px 0px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+ul.products li .product-infor .product-price{
+  font-weight: 800;
+  color: #d70018;
+  padding: 3px 0px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+ul.products li .product-infor .product-price-show{
+  align-items: flex-end;
+  color: #444;
+  display: flex;
+  font-family: sans-serif;
+  line-height: 1;
+}
+ul.products li .product-infor .product-price-show .product-price-through{
+  color: #707070;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 10px 10px;
+    position: relative;
+    -webkit-text-decoration: line-through;
+    text-decoration: line-through;
+    top: 2px;
+}
+.muangay{
+ background-color: red;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-align: center;
+     font-weight: bold;
+    /* display: inline-block; */
+    /* margin-left: 101px;
+    margin-top: -21px */
+  
+}
+.muangay a{
+  text-decoration: none;
+  color: #FFFF;
+  
+}
+.muangay:hover{
+  background-color: rgb(241, 79, 79);
+  transform: scale(1.05);
+}
+/* ------------- */
+/* 0000000000000000000 */
+
+}
+/*Mobile*/
+@media only screen and (max-width: 635px) 
+{
+  header{
+    background-color: rgb(234, 21, 64);
+  }
+  article {
+    width: 100%;
+    height: 1180px;
+    background-color: rgb(255, 255, 255);
+    float: left;
+    padding-left: 1px;
+    padding-right: 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+    flex-grow: 1;
+}
+  .danhmuctablet{
+    display: none;
+  }
+  .danhsachsanpham{
+    display: none;
+  }
+  /* --------------------------- */
+  .slider{
+    width: 350px;
+    height: 241px;
+    /* display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border: 1px solid #131921;
+    grid-gap: 20px;
+    align-items: center; */
+  }
+  .imagesld{
+    align-items: center;
+      display: flex;
+      justify-items: center;
+      width: 100%;
+      margin-top: 10px;
+      justify-content: center;
+      height: 180px;
+      margin-bottom: 20px;
+  
+  }
+  .image-items{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .imagesld img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 12px;
+   
+  }
+  .image-title{
+    margin-top: -21px;
+    font-size: 15px;
+    color: #343a40;
+    font-weight: 700;
+    background-color: #fff;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.1), 0 2px 6px 2px rgba(60,64,67,.1);
+    border-radius: 10px;
+    border-top: none;
+  }
+  .slick-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(60, 64, 67, .1);
+    color: #FFFF;
+    border: none;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    line-height: 1;
+    padding: 10px 20px;
+    border-radius: 100px;
+    transition: all 0.2s  linear;
+  }
+  .slick-arrow:hover{
+    background-color: rgba(0, 0, 0, 0.199);
+  }
+  .slick-prev{
+    left: 0;
+   
+  }
+  .slick-next{
+    right: 0;
+  }
+  .slick-dots{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,100%);
+    list-style: none;
+    display: flex !important;
+    align-items: center;
+    justify-items: center;
+    gap: 0 10px;
+  }
+  .slick-dots button{
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 1000rem;
+    border: none;
+    outline: none;
+    transition: all 0.2s linear;
+  }
+  .slick-dots .slick-active button{
+    background-color: crimson;
+  }
+  /* ------------------------------ */
+  nav{
+    display: none;
+   
+  }
+  #container2 .thanhnhucaulaptop{
+    justify-content: left;
+  }
+  #container2 .thanhnhucaulaptop .vanphong{
+    position: relative;
+    
+    background-color: rgb(155, 124, 87);
+    background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-971.svg);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+   
+    
+  }
+  
+  #container2 .thanhnhucaulaptop .vanphong a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 120px; /* Đặt chiều rộng mong muốn */
+    height: 125px;
+    margin-right: 10px;
+  }#container2 .thanhnhucaulaptop .vanphong:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+    transform: scale(1.25); /* Hiệu ứng phóng to */
+  }
+  #container2 .thanhnhucaulaptop .gaming{
+    position: relative;
+    
+    background-color: rgb(247, 119, 77);
+    background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-973.svg);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+  }
+  
+  #container2 .thanhnhucaulaptop .gaming a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 120px; /* Đặt chiều rộng mong muốn */
+    height: 125px;
+    margin-right: 10px;
+  }
+  #container2 .thanhnhucaulaptop .gaming:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+    transform: scale(1.25); /* Hiệu ứng phóng to */
+  }
+  #container2 .thanhnhucaulaptop .mongnhe{
+    position: relative;
+    
+    background-color: rgb(255, 143, 143);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+  }
+  
+  #container2 .thanhnhucaulaptop .mongnhe a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 120px; /* Đặt chiều rộng mong muốn */
+    height: 125px;
+    margin-right: 10px;
+  }
+  #container2 .thanhnhucaulaptop .mongnhe:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+    transform: scale(1.25); /* Hiệu ứng phóng to */
+  }
+  #container2 .thanhnhucaulaptop .dohoa{
+    position: relative;
+    
+    background-color: rgb(237, 85, 108);
+    background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-972.svg);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+  }
+  
+  #container2 .thanhnhucaulaptop .dohoa a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 120px; /* Đặt chiều rộng mong muốn */
+    height: 125px;
+    margin-right: 10px;
+  }
+  #container2 .thanhnhucaulaptop .dohoa:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+    transform: scale(1.25); /* Hiệu ứng phóng to */
+  }
+  #container2 .thanhnhucaulaptop .sinhvien{
+    position: relative;
+    
+    background-color: rgb(255, 128, 232);
+    background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-1077.svg);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+  }
+  
+  #container2 .thanhnhucaulaptop .sinhvien a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 120px; /* Đặt chiều rộng mong muốn */
+    height: 125px;
+    margin-right: 10px;
+  }
+  #container2 .thanhnhucaulaptop .sinhvien:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+    transform: scale(1.25); /* Hiệu ứng phóng to */
+  }
+  
+  #container2 .thanhnhucaulaptop .camung{
+    position: relative;
+    
+    background-color: rgb(255, 158, 221);
+    background-image: url(https://cdn2.cellphones.com.vn/x/media/icons/category/laptop/filter-cate-974.svg);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+  }
+  
+  #container2 .thanhnhucaulaptop .camung a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 120px; /* Đặt chiều rộng mong muốn */
+    height: 125px;
+    margin-right: 10px;
+  }
+  #container2 .thanhnhucaulaptop .camung:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+    transform: scale(1.25); /* Hiệu ứng phóng to */
+  }
+  /* ------------- */
+  
+#container2 .thanhnhucaulaptop{
+  display: flex;
+  left: 0;
+  box-sizing: border-box;
+  
+}
+/* ------------------ */
+#container3 .thanhnhucaudienthoai{
+  display: flex;
+  justify-content: left;
+  left: 0;
+  box-sizing: border-box;
+ 
+}
+#container3 .thanhnhucaudienthoai .choigame{
+  position: relative;
+  
+  background-color: rgb(15, 15, 15);
+  background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/c/h/ch_i_game.png);
+  background-repeat: no-repeat;
+  background-size: 97px;
+  background-position-x: right;
+  border-radius: 10px;
+  background-position-y: bottom;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 50px;
+  overflow: hidden;
+  width: 90px;
+  height: 90px;
+  flex-basis: 33%;
+  
+}
+
+#container3 .thanhnhucaudienthoai .choigame a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .choigame:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container3 .thanhnhucaudienthoai .pin{
+  position: relative;
+  
+  background-color: rgb(151, 145, 145);
+  background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/p/i/pin-trau-0092.png);
+  background-repeat: no-repeat;
+  background-size: 97px;
+  background-position-x: right;
+  border-radius: 10px;
+  background-position-y: bottom;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+  min-height: 50px;
+  overflow: hidden;
+  width: 90px;
+  height: 90px;
+  flex-basis: 33%;
+  
+}
+
+#container3 .thanhnhucaudienthoai .pin a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .pin:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container3 .thanhnhucaudienthoai .dungluong{
+  position: relative;
+  
+  background-color: rgb(145, 105, 105);
+    background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/a/p/apple-iphone-14-pro-iphone-14-pro-max-deep-purple-220907_inline.jpg.large.png);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+  
+}
+
+#container3 .thanhnhucaudienthoai .dungluong a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .dungluong:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container3 .thanhnhucaudienthoai .cauhinh{
+  position: relative;
+  
+  background-color: rgb(109, 95, 95);
+    background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/c/a/cauhinhcao.png);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+  
+}
+
+#container3 .thanhnhucaudienthoai .cauhinh a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .cauhinh:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+#container3 .thanhnhucaudienthoai .mongnhe{
+  position: relative;
+  
+  background-color: rgb(166, 166, 166);
+    background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/m/o/mong-nhe.png);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+}
+
+#container3 .thanhnhucaudienthoai .mongnhe a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .mongnhe:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+
+#container3 .thanhnhucaudienthoai .chupanh{
+  position: relative;
+  
+  background-color: rgb(188, 174, 182);
+    background-image: url(https://cdn2.cellphones.com.vn/150x,webp,q70/media/tmp/catalog/product/c/a/camera-dt.png);
+    background-repeat: no-repeat;
+    background-size: 97px;
+    background-position-x: right;
+    border-radius: 10px;
+    background-position-y: bottom;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    min-height: 50px;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    flex-basis: 33%;
+  
+}
+
+#container3 .thanhnhucaudienthoai .chupanh a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 120px; /* Đặt chiều rộng mong muốn */
+  height: 125px;
+  margin-right: 10px;
+}
+#container3 .thanhnhucaudienthoai .chupanh:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi rê chuột vào */
+  transform: scale(1.25); /* Hiệu ứng phóng to */
+}
+/* ------------------------ */
+#tieuchi .cactieuchi {
+  display: inline-block;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#tieuchi .cactieuchi .tieuchi {
+  display: inline-block;
+  background-color: #dddbdb;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-right: 4px; /* Khoảng cách giữa các tiêu chí */
+  padding: 0px 0px;
+}
+
+#tieuchi .cactieuchi .tieuchi a {
+  color: rgb(51, 51, 51);
+  display: inline-block;
+  margin-right: -18px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  padding: 5px 5px;
+}
+
+#tieuchi .cactieuchi .tieuchi a:hover {
+  background-color: #c8c8c8;
+  border-radius: 10px;
+  transform: scale(1.05);
+}
+/* -------------------- */
+.tieuchisx{
+  
+}
+.tieuchisx .head-ar-line3{
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.tieuchisx .cactieuchisx {
+  display: inline-block;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.tieuchisx .cactieuchisx .tieuchi {
+  display: inline-block;
+  background-color: #dddbdb;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-right: 1px;
+  padding: 0px -5px;
+}
+
+.tieuchisx .cactieuchisx .tieuchi a {
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 2px;
+  width: 100%;
+  text-align: center;
+  
+}
+
+
+.tieuchisx .cactieuchisx .tieuchi a:hover {
+  background-color: #c8c8c8;
+  border-radius: 10px;
+  transform: scale(1.05);
+}
+/* -------------------- */
+#danhsachsp ul.products{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+#danhsachsp ul.products li{
+padding: 0px 3px;
+flex-basis: 30% ;
+
+}
+
+#danhsachsp ul.products li .product-item{
+ 
+  box-sizing: border-box;
+    box-shadow: 0 0 5px rgb(179, 181, 181);
+    border-radius: 20px;
+    padding: 3px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-height: 370px;
+    max-width: 167px;
+    display: table-caption;
+}
+ul.products li .product-item .product-top{
+  position: relative;
+  overflow: hidden;
+}
+
+
+ul.products li .product-top .product-thumb{
+  display: block;
+}
+ul.products li:hover .product-top .product-thumb img{
+  filter: opacity(80%);
+}
+ul.products li .product-top .product-thumb img{
+  max-width: 50%;
+    max-height: 50%;
+    min-width: 154px;
+    min-height: 154px;
+    width: 90px;
+    height: 90px;
+    display: block;
+}
+ul.products li .product-top a.buy-now{
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  background-color: #f16a82;
+  color: #ffff;
+  padding: 10px 0px;
+  position: absolute;
+  width: 100%;
+  bottom: -36px;
+  left: 0px;
+  transition: 0.25s ease-in-out;
+  opacity: 0.7;
+  border-radius: 10px;
+}
+#danhsachsp ul.products li:hover a.buy-now{
+  bottom: 0px;
+  
+}
+ul.products li .product-infor{
+  padding: 20px 0px;
+
+}
+ul.products li .product-infor a{
+  display: block;
+  text-decoration: none;
+}
+ul.products li .product-infor a.product-cat{
+  font-size: 11px;
+  color: #9e9e9e;
+  text-transform: uppercase;
+  padding: 3px 0px;
+  margin-left: 10px;
+}
+ul.products li .product-infor a.product-name{
+  color: #444;
+  padding: 3px 0px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+ul.products li .product-infor .product-price{
+  font-weight: 800;
+  color: #d70018;
+  padding: 3px 0px;
+  margin-left: 3px;
+  font-size: 20px;
+  position: revert;
+  top: 2px;
+  margin-top: 8px;
+}
+ul.products li .product-infor .product-price-show{
+  align-items: flex-end;
+  color: #444;
+  display: flex;
+  font-family: sans-serif;
+  line-height: 1;
+}
+ul.products li .product-infor .product-price-show .product-price-through{
+  color: #707070;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 10px 10px;
+    position: relative;
+    -webkit-text-decoration: line-through;
+    text-decoration: line-through;
+    top: -15px;
+    left: -46px;
+}
+.muangay{
+ background-color: red;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-align: center;
+     font-weight: bold;
+    /* display: inline-block; */
+    /* margin-left: 101px;
+    margin-top: -21px */
+  
+}
+.muangay a{
+  text-decoration: none;
+  color: #FFFF;
+  
+}
+.muangay:hover{
+  background-color: rgb(241, 79, 79);
+  transform: scale(1.05);
+}
+.footer-col{
+  width: 50%;
+  padding: 0 25px;
+  margin-bottom: 23px;
+
+}
+}
+#container_login{
+  display: none;
+  width: 100%;
+  height: 100%; 
+  z-index: 5;
+  position: fixed;
+  background: rgba(220, 220, 220, 0.7);
+  font-size: 16px;
+}
+#wrapper{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#form-login{
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.9);
+  flex-grow: 1;
+  padding: 30px 30px 40px;
+  box-shadow: 0px 0px 17px 2px rgba(255, 255, 255, 0.8);
+}
+.form-heading{
+  font-size: 25px;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.form-group{
+  border-bottom: 1px solid #000000;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  display: flex;
+}
+.form-group i{
+  color: #000000;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-right: 10px;
+}
+.form-input{
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: #000000;
+  flex-grow: 1;
+}
+.form-input::placeholder{
+  color: #000000;
+}
+#eye i{
+  padding-right: 0;
+  cursor: pointer;
+}
+.form-submit:hover{
+  border: 1px solid #54a0ff;
+}
+.login-icon{
+  height: 18px;
+  width: 22px;
+}
+.button-login{
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid #000000;
+  color: #000000;
+  width: 100%;
+  padding: 6px 6px;
+  transition: 0.25s ease-in-out;
+  margin-top: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.forgot{
+  font-size: small;
+  color: #05a;
+}
+.hoac{
+  color: #b7b7b7;
+  padding: 0 16px;
+  font-size: small;
+}
+.ngang{
+  height: 1px;
+  width: 100%;
+  background-color: #dbdbdb;
+  flex: 1;
+}
+.giua{
+  margin-top: 10px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+}
+.quenmk_dangki{
+  margin: 10px 0;
+  justify-content: space-between;
+  display: flex;
+
+}
+.canhbao{
+  color: rgb(255, 27, 27);
+  font-size: small;
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

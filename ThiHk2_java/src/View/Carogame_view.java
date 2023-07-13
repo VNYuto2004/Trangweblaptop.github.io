@@ -420,13 +420,7 @@ public class Carogame_view extends JFrame {
                 btn[i1][j1].setText("");
                 btn[i1][j1].setBackground(Color.white);
             }
-        }
-        //KhoiTao();
-        setEnableButton(true);
-//        if(numberOfMatch % 2 != 0){
-//            blockgame();
-//        }
-//        
+        }   
         numberOfMatch++;
     }
     public void displayUserTurn() {

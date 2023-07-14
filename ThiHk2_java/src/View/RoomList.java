@@ -11,9 +11,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Vector;
 import javax.swing.JScrollPane;
 import Client.Client;
@@ -35,6 +38,9 @@ public class RoomList extends JFrame {
 		setBounds(100, 100, 450, 551);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		URL url = Carogame_view.class.getResource("caro_game.png");
+		Image logo = Toolkit.getDefaultToolkit().createImage(url);
+		this.setIconImage(logo);
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -49,13 +55,13 @@ public class RoomList extends JFrame {
         };
         String[] columns = {"Tên phòng"};
         DefaultTableModel model = new DefaultTableModel(rows, columns){
-            @Override
-            public Class<?> getColumnClass(int column){
-                switch(column){
-                    case 0: return String.class;
-                    default: return Object.class;
-                }
-            }
+//            @Override
+//            public Class<?> getColumnClass(int column){
+//                switch(column){
+//                    case 0: return String.class;
+//                    default: return Object.class;
+//                }
+//            }
         };
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -75,7 +81,44 @@ public class RoomList extends JFrame {
         isPlayThread = true;
         isFiltered = false;
         
-        thread = new Thread(){
+        autoUpdate();
+        
+	}
+	public void updateRoomList(Vector<String> listData){
+        this.listRoom = listData;
+        defaultTableModel.setRowCount(0);
+        for(int i=0; i<listRoom.size(); i++){
+            defaultTableModel.addRow(new Object[]{
+                listRoom.get(i)
+            });
+        }
+    }
+	private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        if(jTable1.getSelectedRow()!=-1){
+        	isPlayThread = false;
+        	int result = JOptionPane.showConfirmDialog(null, "Bạn có chắc muốn vào phòng này?", "Xác nhận", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if(result == JOptionPane.YES_OPTION){               
+            	try {
+            		int index = jTable1.getSelectedRow();
+            		int room = Integer.parseInt(listRoom.get(index).split(" ")[1]);
+            		Client.socketHandle.write("join-room,"+room);
+            		isPlayThread = false;
+            		Client.closeView(Client.View.ROOMLIST);
+            	} catch (IOException ex) {
+            		JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+            	}
+            }else {
+            	isPlayThread = true;
+            	autoUpdate();
+            }
+        }
+    }
+	public void stopThread() {
+		isPlayThread = false;
+		System.out.println("đã đóng luồng");
+	}
+	public void autoUpdate() {
+		thread = new Thread(){
             @Override
             public void run(){
                 while (isPlayThread&&!isFiltered) {                    
@@ -91,32 +134,5 @@ public class RoomList extends JFrame {
             }
         };
         thread.start();
-        
-	}
-	public void updateRoomList(Vector<String> listData){
-        this.listRoom = listData;
-        defaultTableModel.setRowCount(0);
-        for(int i=0; i<listRoom.size(); i++){
-            defaultTableModel.addRow(new Object[]{
-                listRoom.get(i)
-            });
-        }
-    }
-	private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        if(jTable1.getSelectedRow()!=-1){      
-        	try {
-        		int index = jTable1.getSelectedRow();
-        		int room = Integer.parseInt(listRoom.get(index).split(" ")[1]);
-        		Client.socketHandle.write("join-room,"+room);
-        		isPlayThread = false;
-        		Client.closeView(Client.View.ROOMLIST);
-        	} catch (IOException ex) {
-        		JOptionPane.showMessageDialog(rootPane, ex.getMessage());
-        	}
-        }
-    }
-	public void stopThread() {
-		thread.stop();
-		System.out.println("đã đóng luồng");
 	}
 }

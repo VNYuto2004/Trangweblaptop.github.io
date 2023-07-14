@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 import java.awt.GridLayout;
@@ -17,8 +18,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.URL;
+import java.net.UnknownHostException;
+
 import Client.Client;
+import Client.SocketHandle;
 
 import javax.swing.border.LineBorder;
 import javax.swing.JTextArea;
@@ -27,6 +32,7 @@ import javax.swing.Timer;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.event.WindowAdapter;
+import javax.swing.JSeparator;
 
 public class Carogame_view extends JFrame {
 
@@ -38,12 +44,20 @@ public class Carogame_view extends JFrame {
     private int numberOfMatch;
     private Timer timer;
     private Integer second, minute;
-    private Thread sendThread;
-    private boolean isSending;
     private String competitorIP;
+    private String yourTurn;
+    private int yourScore=0;
+    private int enmScore=0;
+    private String enmTurn;
     JLabel lbl_Time = new JLabel();
     JTextArea textArea = new JTextArea();
     JLabel lbl_Luot = new JLabel();
+    JLabel lbl_TenBan = new JLabel();
+    JLabel lbl_TenDoiThu = new JLabel();
+    JLabel lblYourSC = new JLabel();
+    JLabel lblEnmSC = new JLabel();
+    private final JLabel lblNewLabel_2 = new JLabel("Điểm :");
+    private final JLabel lblNewLabel_2_1 = new JLabel("Điểm :");
 	/**
 	 * Launch the application.
 	 */
@@ -54,10 +68,10 @@ public class Carogame_view extends JFrame {
 		setBounds(100, 50, 1075, 750);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.setResizable(false);
 		
 		numberOfMatch = isStart;
 		this.competitorIP = competitorIP;
-		isSending = false;
         second = 60;
         minute = 0;
         
@@ -77,7 +91,7 @@ public class Carogame_view extends JFrame {
                     second = 60;
                     minute = 0;
                     try {
-                        //Client.openView(Client.View.GAMECLIENT, "Bạn đã thua do quá thời gian", "Đang thiết lập ván chơi mới");
+                    	JOptionPane.showMessageDialog(rootPane, "bạn đã thua do hết thời gian");
                         Client.socketHandle.write("lose,");
                     } catch (IOException ex) {
                         JOptionPane.showMessageDialog(rootPane, ex.getMessage());
@@ -87,11 +101,8 @@ public class Carogame_view extends JFrame {
                 	lbl_Time.setText("Thời Gian:" + temp + ":" + temp1);
                     second--;
                 }
-
             }
-
-        });
-    	    
+        });   
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -111,25 +122,55 @@ public class Carogame_view extends JFrame {
 		lbliTh.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lbliTh.setBounds(10, 113, 330, 28);
 		contentPane.add(lbliTh);
+		lbl_TenBan.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		JLabel lbl_TenBan = new JLabel("");
-		lbl_TenBan.setBounds(10, 43, 330, 20);
+		lbl_TenBan.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lbl_TenBan.setBounds(10, 43, 60, 20);
 		contentPane.add(lbl_TenBan);
+		lbl_TenDoiThu.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_TenDoiThu.setFont(new Font("Tahoma", Font.BOLD, 16));
 		
-		JLabel lbl_TenDoiThu = new JLabel("");
-		lbl_TenDoiThu.setBounds(10, 157, 330, 20);
+		
+		lbl_TenDoiThu.setBounds(10, 157, 60, 20);
 		contentPane.add(lbl_TenDoiThu);
 		
-		textArea.setBounds(10, 357, 330, 119);
-		contentPane.add(textArea);
+		textArea.setEditable(false);
+		
+		JScrollPane scroll = new JScrollPane();
+		scroll.setBounds(10, 357, 330, 119);
+		contentPane.add(scroll);
+		scroll.setViewportView(textArea);
 		
 		textField = new JTextField();
 		textField.setBounds(10, 501, 234, 28);
 		contentPane.add(textField);
 		textField.requestFocus();
 		textField.setColumns(10);
+		textField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+            	if (evt.getKeyCode() == 10) {
+            		try {
+    		            if (textField.getText().isEmpty()) {
+    		                throw new Exception("Vui lòng nhập nội dung tin nhắn");
+    		            }
+    		            String temp = textArea.getText();
+    		            temp += "Tôi: " + textField.getText() + "\n";
+    		            textArea.setText(temp);
+    		            Client.socketHandle.write("chat," + textField.getText());
+    		            textField.setText("");
+    		            textField.requestFocus();
+    		            textArea.setCaretPosition(textArea.getDocument().getLength());
+    		        } catch (IOException ex) {
+    		            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+    		        } catch (Exception ex) {
+    		            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+    		        } 	
+            	}
+            }
+        });
 		
-		JButton btn_Gui = new JButton("gửi");
+		JButton btn_Gui = new JButton("Gửi");
+		btn_Gui.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btn_Gui.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -160,6 +201,34 @@ public class Carogame_view extends JFrame {
 		
 		lbl_Luot.setBounds(10, 290, 330, 28);
 		contentPane.add(lbl_Luot);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(10, 101, 338, 2);
+		contentPane.add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(10, 215, 338, 2);
+		contentPane.add(separator_1);
+		
+		JLabel lblNewLabel_1 = new JLabel("Chat");
+		lblNewLabel_1.setBounds(10, 344, 72, 13);
+		contentPane.add(lblNewLabel_1);
+		
+		lblYourSC.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblYourSC.setBounds(238, 43, 45, 20);
+		contentPane.add(lblYourSC);
+		
+		lblEnmSC.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblEnmSC.setBounds(238, 157, 45, 20);
+		contentPane.add(lblEnmSC);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_2.setBounds(162, 157, 45, 20);
+		
+		contentPane.add(lblNewLabel_2);
+		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_2_1.setBounds(162, 43, 45, 20);
+		
+		contentPane.add(lblNewLabel_2_1);
 		
 		URL url = Carogame_view.class.getResource("caro_game.png");
 		Image logo = Toolkit.getDefaultToolkit().createImage(url);
@@ -209,14 +278,15 @@ public class Carogame_view extends JFrame {
 	                        diem++;
 	                        if (win(i, j, btn[i][j].getText())) {
 	                            btn[i][j].setBackground(Color.red);
-	                            JOptionPane.showMessageDialog(null, "X win!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
+	                            JOptionPane.showMessageDialog(null, "Bạn thắng!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
 	                            JOptionPane.showMessageDialog(null, "Trò Chơi Mới", "Thoát", JOptionPane.INFORMATION_MESSAGE);
-	                            for (int i1 = 0; i1 < n; i1++) {
-	                                for (int j1 = 0; j1 < m; j1++) {
-	                                    btn[i1][j1].setText("");
-	                                    btn[i1][j1].setBackground(Color.white);
-	                                }
-	                            }
+	                            yourScore++;
+	                            try {
+									Client.socketHandle.write("win,"+i+","+j);
+								} catch (IOException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}
 	                        }
 	                    } else {
 	                        /**/
@@ -231,19 +301,22 @@ public class Carogame_view extends JFrame {
 								e1.printStackTrace();
 							}
 	                        setEnableButton(false);
+	                        displayCompetitorTurn();
 	                        diem++;
 	                        if (win(i, j, btn[i][j].getText())) {
 	                            btn[i][j].setBackground(Color.green);
-	                            JOptionPane.showMessageDialog(null, "O win!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
+	                            JOptionPane.showMessageDialog(null, "Bạn thắng!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
 	                            JOptionPane.showMessageDialog(null, "Trò Chơi Mới", "Thoát", JOptionPane.INFORMATION_MESSAGE);
-	                            for (int i1 = 0; i1 < n; i1++) {
-	                                for (int j1 = 0; j1 < m; j1++) {
-	                                    btn[i1][j1].setText("");
-	                                    btn[i1][j1].setBackground(Color.white);
-	                                }
-	                            }
+	                            yourScore++;
+	                            try {
+									Client.socketHandle.write("win,"+i+","+j);
+								} catch (IOException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}
 	                        }
-	                    }//
+	                    }
+	                    stopTimer();
 	                }
 	            }
 	        }
@@ -301,6 +374,7 @@ public class Carogame_view extends JFrame {
             timer.stop();
             Client.socketHandle.write("left-room,");
             Client.closeAllViews();
+            JOptionPane.showMessageDialog(rootPane, "Đang trở về lại màn hình chính");
             Client.openView(Client.View.HOMEPAGE);
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
@@ -340,6 +414,13 @@ public class Carogame_view extends JFrame {
             }
         }
     }
+    public void setEnableAllButton(boolean b) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {               
+                    btn[i][j].setEnabled(b);
+            }
+        }
+    }
     public void caro(String x, String y) {
         int xx, yy;
         xx = Integer.parseInt(x);
@@ -355,14 +436,10 @@ public class Carogame_view extends JFrame {
                 diem++;
                 if (win(xx, yy, btn[xx][yy].getText())) {
                     btn[xx][yy].setBackground(Color.red);
-                    JOptionPane.showMessageDialog(null, "X win!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Đối thủ thắng!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
                     JOptionPane.showMessageDialog(null, "Trò Chơi Mới", "Thoát", JOptionPane.INFORMATION_MESSAGE);
-                    for (int i1 = 0; i1 < n; i1++) {
-                        for (int j1 = 0; j1 < m; j1++) {
-                            btn[i1][j1].setText("");
-                            btn[i1][j1].setBackground(Color.white);
-                        }
-                    }
+                    enmScore++;
+                    timer.stop();
                 }
             } else {
                 btn[xx][yy].setText("O");
@@ -371,15 +448,10 @@ public class Carogame_view extends JFrame {
                 diem++;
                 if (win(xx, yy, btn[xx][yy].getText())) {
                     btn[xx][yy].setBackground(Color.green);
-                    JOptionPane.showMessageDialog(null, "O win!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Đối thủ thắng!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
                     JOptionPane.showMessageDialog(null, "Trò Chơi Mới", "Thoát", JOptionPane.INFORMATION_MESSAGE);
+                    enmScore++;
                     timer.stop();
-                    for (int i1 = 0; i1 < n; i1++) {
-                        for (int j1 = 0; j1 < m; j1++) {
-                            btn[i1][j1].setText("");
-                            btn[i1][j1].setBackground(Color.white);
-                        }
-                    }
                 }
             }
         }
@@ -406,31 +478,61 @@ public class Carogame_view extends JFrame {
         minute = 0;
         timer.start();
     }
-    public void newgame() {       
+    public void newgame() {
         if (numberOfMatch % 2 == 0) {
             JOptionPane.showMessageDialog(rootPane, "Đến lượt bạn đi trước");
+            yourTurn = "X";
+            enmTurn ="O";
             startTimer();
             displayUserTurn();
         } else {
             JOptionPane.showMessageDialog(rootPane, "Đối thủ đi trước");
+            yourTurn = "O";
+            enmTurn ="X";
             displayCompetitorTurn();
+            setEnableAllButton(false);
         }
         for (int i1 = 0; i1 < n; i1++) {
             for (int j1 = 0; j1 < m; j1++) {
                 btn[i1][j1].setText("");
                 btn[i1][j1].setBackground(Color.white);
             }
-        }   
+        }
+        if(yourTurn=="O") {
+    		lbl_TenBan.setForeground(Color.BLUE);
+    		lbl_TenDoiThu.setForeground(Color.RED);
+    	}else {
+    		lbl_TenBan.setForeground(Color.RED);
+    		lbl_TenDoiThu.setForeground(Color.BLUE);
+    	}
+        lblYourSC.setText(yourScore+"");
+        lblEnmSC.setText(enmScore+"");
+        lbl_TenBan.setText(yourTurn);
+        lbl_TenDoiThu.setText(enmTurn);
+        diem = 0;
         numberOfMatch++;
     }
     public void displayUserTurn() {
-        lbl_Luot.setText("Lượt của bạn");
+    	if(yourTurn=="O") {
+    		lbl_Luot.setForeground(Color.BLUE);
+    	}else {
+    		lbl_Luot.setForeground(Color.RED);
+    	}
+        lbl_Luot.setText("Lượt của bạn : "+ yourTurn);
         setEnableButton(true);
         lbl_Time.setVisible(true);
     }
     public void displayCompetitorTurn() {
-    	lbl_Luot.setText("Lượt của đối thủ");
+    	if(enmTurn=="O") {
+    		lbl_Luot.setForeground(Color.BLUE);
+    	}else {
+    		lbl_Luot.setForeground(Color.RED);
+    	}
+    	lbl_Luot.setText("Lượt của đối thủ : "+ enmTurn);
     	setEnableButton(false);
     	lbl_Time.setVisible(false);
+    }
+    public void displayCopetitorOut() {
+    	JOptionPane.showMessageDialog(rootPane, "Đối thủ đã thoát, đang trở về màn hình chính");
     }
 }

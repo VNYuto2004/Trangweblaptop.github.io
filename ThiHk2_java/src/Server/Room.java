@@ -8,7 +8,6 @@ public class Room {
     private int ID;
     private ServerThread user1;
     private ServerThread user2;
-    private String password;
 
     public int getID() {
         return ID;

@@ -12,9 +12,12 @@ import javax.swing.JOptionPane;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -31,28 +34,17 @@ public class FindRoom extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FindRoom frame = new FindRoom();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
+	
 	public FindRoom() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 494, 321);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.setResizable(false);
+		URL url = Carogame_view.class.getResource("caro_game.png");
+		Image logo = Toolkit.getDefaultToolkit().createImage(url);
+		this.setIconImage(logo);
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -86,7 +78,7 @@ public class FindRoom extends JFrame {
 		        }
 		        timer.stop();
 		        Client.closeView(Client.View.FINDROOM);
-		        Client.openView(Client.View.HOMEPAGE);
+		        //Client.openView(Client.View.HOMEPAGE);
 			}
 		});
 		btn_FRThoat.setBounds(199, 238, 85, 21);
@@ -128,9 +120,8 @@ public class FindRoom extends JFrame {
                         sendFindRequest();
                     }
                     else{
-                        //Có thể hỏi chơi với máy không
                         Client.closeView(Client.View.FINDROOM);
-                        Client.openView(Client.View.HOMEPAGE);
+                        //Client.openView(Client.View.HOMEPAGE);
                     }
                 }
             }
@@ -150,6 +141,6 @@ public class FindRoom extends JFrame {
         isFinded = true;
         timer.stop();
         lbl_ThongTin.setText("Đã tìm thấy đối thủ, đang vào phòng");
-        
+        lbl_ThongTin.setForeground(Color.BLUE);
     }
 }

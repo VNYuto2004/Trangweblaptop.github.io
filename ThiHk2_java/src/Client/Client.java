@@ -131,6 +131,23 @@ public class Client {
         } 
         if(roomNameFrm!=null) roomNameFrm.dispose();
     }
+	public static void closeViews(){
+        //if(homePageFrm!=null) homePageFrm.dispose();
+        if(roomListFrm!=null) {
+        	roomListFrm.dispose();
+        	roomListFrm.stopThread();
+        }
+        if(findRoomFrm!=null){
+            findRoomFrm.stopAllThread();
+            findRoomFrm.dispose();
+        } 
+        if(waitingRoomFrm!=null) waitingRoomFrm.dispose();
+        if(gameClientFrm!=null){
+            gameClientFrm.stopAllThread();
+            gameClientFrm.dispose();
+        } 
+        if(roomNameFrm!=null) roomNameFrm.dispose();
+    }
 	public static void main(String[] args) {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

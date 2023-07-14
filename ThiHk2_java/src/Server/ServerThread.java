@@ -202,10 +202,7 @@ public class ServerThread implements Runnable {
                     user2.setRoom(room);
                     goToOwnRoom();
                 }
-                //Xử lý khi không đồng ý thách đấu
-//                if(messageSplit[0].equals("disagree-duel")){
-//                    Server.serverThreadBus.sendMessageToUserID(Integer.parseInt(messageSplit[1]),message);
-//                }
+
                 //Xử lý khi người chơi đánh 1 nước
                 if(messageSplit[0].equals("caro")){
                     room.getCompetitor(clientNumber).write(message);

@@ -42,12 +42,6 @@ public class SocketHandle implements Runnable {
                 if(messageSplit[0].equals("server-send-id")){
                     ID_Server = Integer.parseInt(messageSplit[1]);
                 }
-                //Xử lý nhận thông tin, chat từ toàn server
-                if(messageSplit[0].equals("chat-server")){
-                    if(Client.homePageFrm!=null){
-                       //Client.homePageFrm.addMessage(messageSplit[1]);
-                    }
-                }
                 //Xử lý kết quả tìm phòng từ server
                 if(messageSplit[0].equals("room-fully")){
                     Client.closeAllViews();
@@ -107,25 +101,11 @@ public class SocketHandle implements Runnable {
                 
                 //Tạo phòng và server trả về tên phòng
                 if(messageSplit[0].equals("your-created-room")){
-                    Client.closeAllViews();
+                    //Client.closeAllViews();
+                	Client.closeViews();
+                	Client.homePageFrm.ennableButton(false);
                     Client.openView(Client.View.WAITINGROOM);
                     Client.waitingRoomFrm.setRoomName(messageSplit[1]);
-                }
-                //Xử lý khi nhận được yêu cầu thách đấu
-                if(messageSplit[0].equals("duel-notice")){
-                    int res = JOptionPane.showConfirmDialog(Client.getVisibleJFrame(), "Bạn nhận được lời thách đấu của "+messageSplit[2]+" (ID="+messageSplit[1]+")", "Xác nhận thách đấu", JOptionPane.YES_NO_OPTION);
-                    if(res == JOptionPane.YES_OPTION){
-                        Client.socketHandle.write("agree-duel,"+messageSplit[1]);
-                    }
-                    else{
-                        Client.socketHandle.write("disagree-duel,"+messageSplit[1]);
-                    }
-                }
-                //Xử lý không đồng ý thách đấu
-                if(messageSplit[0].equals("disagree-duel")){
-                    Client.closeAllViews();
-                    Client.openView(Client.View.HOMEPAGE);
-                    JOptionPane.showMessageDialog(Client.homePageFrm, "Đối thủ không đồng ý thách đấu");
                 }
                 //Xử lý đánh một nước trong ván chơi
                 if(messageSplit[0].equals("caro")){
@@ -136,37 +116,29 @@ public class SocketHandle implements Runnable {
                 }
                 
                 if(messageSplit[0].equals("draw-refuse")){
-                    //if(Client.gameNoticeFrm!=null) Client.closeView(Client.View.GAMENOTICE);
                     Client.gameClientFrm.displayDrawRefuse();
                 }
                 
                 if(messageSplit[0].equals("new-game")){
                     System.out.println("New game");
-                    Thread.sleep(4000);
-//                    Client.gameClientFrm.updateNumberOfGame();
-//                    Client.closeView(Client.View.GAMENOTICE);
+                    Thread.sleep(1000);
                     Client.gameClientFrm.newgame();
                 }
                 if(messageSplit[0].equals("draw-game")){
                     System.out.println("Draw game");
-//                    Client.closeView(Client.View.GAMENOTICE);
-//                    Client.openView(Client.View.GAMENOTICE, "Ván chơi hòa", "Ván chơi mới dang được thiết lập");
-//                    Client.gameClientFrm.displayDrawGame();
-//                    Thread.sleep(4000);
-//                    Client.gameClientFrm.updateNumberOfGame();
-//                    Client.closeView(Client.View.GAMENOTICE);
-//                    Client.gameClientFrm.newgame();
+                   Thread.sleep(1000);
+                    Client.gameClientFrm.newgame();
                 }
                 if(messageSplit[0].equals("competitor-time-out")){
-                    Thread.sleep(4000);
+                    Thread.sleep(1000);
                     Client.gameClientFrm.newgame();
                 }
               
                 if(messageSplit[0].equals("left-room")){
                     Client.gameClientFrm.stopTimer();
                     Client.closeAllViews();
-                    //Client.openView(Client.View.GAMENOTICE,"Đối thủ đã thoát khỏi phòng","Đang trở về trang chủ");
-                    Thread.sleep(3000);       
+                    Client.gameClientFrm.displayCopetitorOut();
+                    Thread.sleep(2000);       
                     Client.closeAllViews();
                     Client.openView(Client.View.HOMEPAGE);
                 }
